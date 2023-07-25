@@ -296,7 +296,7 @@ unset($this->posts);
 						<pre><code class="language-php" data-line-numbers="3|2-3|2-4|6-8|10-12|14" data-noescape>
 #[Url]
 public $search = 'abc';
-https://example.com/search?q=caleb
+https://example.com/users?search=abc
 
 #[Url(as: 'q')]
 public $search = 'caleb';
@@ -349,6 +349,108 @@ public function reset()
 					</section>
 				</section>
 				<!-- END ATTRIBUTES -->
+				<!-- START REDIRECT -->
+				<section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Redirect</h3>
+						<pre><code class="language-php" data-line-numbers="4" data-noescape data-id="code-redirect">
+public function save()
+{
+  return $this->redirect('/some-url-that-i-cant-remember');
+}
+</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Redirect</h3>
+						<pre><code class="language-php" data-line-numbers="4" data-noescape data-id="code-redirect">
+public function save()
+{
+  return $this->redirect(ShowPage::class);
+}
+</code></pre>
+					</section>
+				</section>
+				<!-- END REDIRECT -->
+				<!-- START DIRTY -->
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+					<h3>Dirty state</h3>
+					<pre><code class="language-blade" data-line-numbers="3|3,7|5|5,7" data-noescape data-id="code-dirty">
+&lt;form wire:submit="update"&gt;
+    &lt;input type="text" wire:model="title"/&gt;
+
+    &lt;button type="submit"&gt;Update&lt;/button&gt;
+
+    &lt;div wire:dirty&gt;Unsaved changes...&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+				</section>
+				<!-- END DIRTY -->
+				<!-- START TELEPORT -->
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+					<h3>@TELEPORT</h3>
+					<pre><code class="language-blade" data-line-numbers="1-14|7-11" data-noescape data-id="code-teleport">
+&lt;div&gt;
+    &lt;!-- Modal --&gt;
+    &lt;div x-data="{ open: false }"&gt;
+        &lt;button @click="open = ! open"&gt;Toggle Modal&lt;/button&gt;
+
+        @teleport('body')
+            &lt;div x-show="open"&gt;
+                Modal contents...
+            &lt;/div&gt;
+        @endteleport
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+				</section>
+				<!-- END TELEPORT -->
+				<!-- START FORM -->
+				<section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Form object</h3>
+						<pre><code class="language-php" data-line-numbers="1-15|3|5-8" data-noescape data-id="code-form-object">class EditPost extends Component
+{
+  public Post $post;
+
+  protected $rules = [
+    'post.title' => 'required|string|min:6',
+    'post.content' => 'required|string|max:500',
+  ];
+
+  public function save()
+  {
+    $this->validate();
+    $this->post->save();
+  }
+}</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Form object</h3>
+						<pre><code class="language-php" data-line-numbers="3|7" data-noescape data-id="code-form-object">class EditPost extends Component
+{
+  public PostForm $form;
+
+  public function save()
+  {
+    $this->form->update()
+  }
+}</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Form object</h3>
+						<pre><code class="language-php" data-line-numbers="1|6,9|5,8" data-noescape data-id="code-form-object">PostForm extends Form
+{
+  public Post $post;
+
+  #[Rule('required|string|min:6')]
+  public $title = '';
+
+  #[Rule('required|string|max:500')]
+  public $content = '';
+}</code></pre>
+					</section>
+				</section>
+				<!-- END FORM -->
 				<!-- PPL -->
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
 					<h3>Meet Josh</h3>
