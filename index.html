@@ -19,6 +19,9 @@
 				--r-code-font: 'Operator Mono Lig Medium','Operator Mono SSm Lig Medium' !important;
 				--display-footer: none;
 			}
+			tr:not(.highlight-line) .hljs-ln-code {
+				filter:blur(1.5px);
+			}
 			footer {
 				width: 100dvw;
 				height: 50px;
@@ -111,7 +114,7 @@
 				<section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php" data-line-numbers="1-7|5">class CreatePost extends Component
 {
   public function save()
   {
@@ -121,7 +124,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php" data-line-numbers="5">class CreatePost extends Component
 {
   public function save()
   {
@@ -131,7 +134,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php" data-line-numbers="5">class CreatePost extends Component
 {
   public function save()
   {
@@ -141,7 +144,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php" data-line-numbers="5">class CreatePost extends Component
 {
   public function save()
   {
@@ -151,7 +154,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php" data-line-numbers="5">class CreatePost extends Component
 {
   public function save()
   {
@@ -161,7 +164,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php" data-line-numbers="5">class CreatePost extends Component
 {
   public function save()
   {
@@ -171,7 +174,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class PostList extends Component
+						<pre data-id="code-event-listen"><code class="language-php" data-line-numbers="1-9|3|3-5">class PostList extends Component
 {
   protected $listeners = ['post-created' => 'increase'];
 
@@ -183,7 +186,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class PostList extends Component
+						<pre data-id="code-event-listen"><code class="language-php" data-line-numbers="3|3-4">class PostList extends Component
 {
   #[On('post-created')]
   public function increase()
@@ -194,7 +197,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-php">class PostList extends Component
+						<pre data-id="code-event-listen"><code class="language-php" data-line-numbers="3-4">class PostList extends Component
 {
   #[On('post-created')]
   #[On('post-imported')]
@@ -206,15 +209,15 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-blade">
-<!-- from Livewire component -->
+						<pre data-id="code-event-listen-js"><code class="language-blade" data-noescape>
+&lt;!-- from Livewire component --&gt;
 &lt;div x-on:post-created="..."&gt;&lt;/div&gt;
 						</code></pre>
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-blade" >
-<!-- from any Livewire component on the page -->
+						<pre data-id="code-event-listen-js"><code class="language-blade" data-noescape>
+&lt;!-- from any Livewire component on the page --&gt;
 &lt;div x-on:post-created.window="..."&gt;&lt;/div&gt;
 						</code></pre>
 					</section>
@@ -233,7 +236,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-						<pre data-id="code-attributes" style="flex:1;"><code class="language-php">
+						<pre data-id="code-attributes"><code class="language-php" data-line-numbers="1|2|4">
 protected $listeners = ['post-created' => 'increase'];
 
 #[On('post-created')]
@@ -241,7 +244,7 @@ protected $listeners = ['post-created' => 'increase'];
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-						<pre data-id="code-attributes-2"><code class="language-php">
+						<pre data-id="code-attributes-2"><code class="language-php" data-line-numbers="5-8|2-3">
 public $name = '';
 public $email = '';
 
@@ -253,7 +256,7 @@ protected $rules = [
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-						<pre data-id="code-attributes-2"><code class="language-php">
+						<pre data-id="code-attributes-2"><code class="language-php" data-line-numbers="3,5|1-5">
 #[Rule('required|min:6')]
 public $name = '';
 #[Rule('required|email')]
@@ -286,22 +289,21 @@ public $value = '';
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-						<pre><code class="language-php" data-line-numbers="2-6|8-9|11|11-12|14-15" data-noescape>
+						<pre><code class="language-php" data-line-numbers="2-6|8|8-9|11-12|14-15" data-noescape>
 #[Computed]
 public function user()
 {
   return User::find($this->userId);
 }
 
-// Busting the cache
-unset($this->posts);
-
 #[Computed(persist: true)] // default 1 hour
 #[Computed(persist: true, seconds: 42)]
 
 // all instances will share this, kinda static
 #[Computed(cache: true)]
-</code></pre>
+
+// Busting the cache
+unset($this->posts);</code></pre>
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
@@ -332,7 +334,7 @@ public Post $post;
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-						<pre><code class="language-php" data-line-numbers="3|5-7|2|2-8" data-noescape>
+						<pre><code class="language-php" data-line-numbers="5-7|2-3" data-noescape>
 #[Js]
 public function reset()
 {
@@ -344,8 +346,7 @@ public function reset()
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-						<div style="display: flex; gap: 2rem; align-items: center">
-<pre data-id="code-attributes" style="flex:1;"><code class="language-php">#[On]
+<pre data-id="code-attributes""><code class="language-php">#[On]
 #[Rule]
 #[Url]
 #[Computed]
@@ -356,8 +357,6 @@ public function reset()
 #[Renderless]
 #[Modelable]
 #[Reactive]</code></pre>
-				<span data-qr="https://livewire.laravel.com/docs/quickstart"></span>
-			</div>
 					</section>
 				</section>
 				<!-- END ATTRIBUTES -->
@@ -501,7 +500,15 @@ public function save()
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Automatic upgrade</h3>
-						<pre><code class="language-shell" data-id="code-upgrade">$ php artisan livewire:upgrade</code></pre>
+						<div style="display:flex; gap:2rem;">
+							<div>
+								<p class="fragment" data-fragment-index="1">🇳🇱 Philo Hermans</p>
+								<div class="r-stretch">
+									<img src="assets/philo.jpg" class="fragment" data-fragment-index="1" />
+								</div>
+							</div>
+							<pre class="fragment" data-fragment-index="2"><code class="language-shell" data-id="code-upgrade">$ php artisan livewire:upgrade</code></pre>
+						</div>
 					</section>
 				</section>
 				<!-- END MISC -->
@@ -522,10 +529,15 @@ public function save()
 				</section>
 				<!-- PPL -->
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
-					<h3>📢 Shoutout for Josh</h3>
-					<div style="display: flex; gap: 2rem; align-items: center">
-						<img class="fragment" src="assets/josh.jpg" style="max-width: 400px"/>
-						<ul style="list-style: none; min-width: 40ch">
+					<h3>📢 Shoutout</h3>
+					<div style="display:flex; gap:2rem; align-items:center;">
+						<div>
+							<p class="fragment" data-fragment-index="1">🇦🇺 Josh Hanley</p>
+							<div class="r-stretch">
+								<img src="assets/josh.jpg" class="fragment" data-fragment-index="1" />
+							</div>
+						</div>
+						<ul style="list-style: none; min-width:28ch;">
 							<li class="fragment">⛵ lives on a boat</li>
 							<li class="fragment">🤗 super handsome guy</li>
 							<li class="fragment">❓ takes care about issues</li>
@@ -533,6 +545,18 @@ public function save()
 							<li class="fragment">⌛ busy since v3 public beta</li>
 							<li class="fragment">⚠️ be patient</li>
 						</ul>
+					</div>
+				</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+					<h3>📢 Shoutout</h3>
+					<div style="display:flex; gap:2rem; align-items:end;">
+						<div>
+							<p class="fragment" data-fragment-index="1">🇺🇸 Caleb Porzio</p>
+							<div class="r-stretch">
+								<img src="assets/caleb.jpg" class="fragment" data-fragment-index="1" />
+							</div>
+						</div>
+						<div class="fragment" style="font-size:20rem;margin:0 auto;">❤️</div>
 					</div>
 				</section>
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
