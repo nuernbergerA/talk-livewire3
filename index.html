@@ -463,13 +463,62 @@ public function save()
 					</section>
 				</section>
 				<!-- END FORM -->
+				<!-- START MISC -->
+				<section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>SPA mode</h3>
+						<pre><code class="language-blade" data-id="code-spa" data-noescape>&lt;a href="/profile"&gt;Profile&lt;/a&gt;</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>SPA mode</h3>
+						<pre><code class="language-blade" data-id="code-spa" data-noescape>&lt;a href="/profile" wire:navigate&gt;Profile&lt;/a&gt;</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>@persist</h3>
+						<pre><code class="language-blade" data-id="code-spa" data-noescape>@persist('player')
+  &lt;audio src="{{ $episode->file }}" controls&gt;&lt;/audio&gt;
+@endpersist</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Lazy loading</h3>
+						<pre><code class="language-bash" data-id="code-lazy" data-noescape>&lt;livewire:revenue lazy /&gt;</code></pre>
+						<pre><code class="language-php" data-line-numbers="1-16|3-6|8-15" data-noescape data-id="code-lazy-placeholder">class Revenue extends Component
+{
+  public function mount()
+  {
+    // Expensive database query...
+  }
+
+  public function placeholder()
+  {
+    return <<<'HTML'
+      &lt;div&gt;
+        &lt;!-- Loading spinner... --&gt;
+      &lt;/div&gt;
+    HTML;
+  }
+}</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Automatic upgrade</h3>
+						<pre><code class="language-shell" data-id="code-upgrade">$ php artisan livewire:upgrade</code></pre>
+					</section>
+				</section>
+				<!-- END MISC -->
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
-					<h3>Whats next</h3>
+					<h3>Call to action</h3>
 					<ul style="list-style: none">
 						<li class="fragment">💻 Test Livewire 3 in your app</li>
 						<li class="fragment">📝 Check discussions before reporting a bug 🐛</li>
 						<li class="fragment">💪 Report bugs (with failing test ✨)</li>
 					</ul>
+				</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+					<h3>What's next</h3>
+					<h5 class="fragment">Dev tools</h5>
+					<div class="r-stretch">
+						<img src="assets/livewire-dev-tools.jpg" class="fragment" />
+					</div>
 				</section>
 				<!-- PPL -->
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
@@ -492,7 +541,19 @@ public function save()
 						<img class="r-stretch" src="assets/head.png"/>
 						<div style="position: absolute; inset: 0; left: -10%; top: 74%;"><span class="animate-drink">🍺</span></div>
 					</div>
-					<div data-qr="https://livewire.laravel.com/"></div>
+					<div style="display: flex; gap:2rem;"><div>
+						<div data-qr="https://laravel-news.com/livewire-v3-beta"></div>
+							<img src="assets/laravel-news.svg"/>
+						</div>
+						<div>
+							<div data-qr="https://livewire.laravel.com"></div>
+							<img src="assets/livewire-icon.svg"/>
+						</div>
+						<div>
+							<div data-qr="https://github.com/livewire/livewire"></div>
+							<img src="assets/github.svg"/>
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>
