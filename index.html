@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Talk: Whats new in Livewire v3 | Adrian Nürnberger</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -43,35 +43,40 @@
 			<div class="slides">
 				<section>
 					<section data-auto-animate data-background-gradient="linear-gradient(to bottom, #152c3a, rgb(15 23 42))">
-						<h1 class="r-fit-text">Hello, I am Adrian!</h1>
+						<h1 class="r-fit-text fragment" data-fragment-index="1">Hello, I am Adrian!</h1>
 						<div style="max-width: 60%; margin: 0 auto;">
 							<h3 class="r-fit-text">
 								<div style="display: inline-flex;">
 									<span class="r-stack">
-									<span class="fragment fade-in" data-fragment-index="1">
-									  <span class="fragment custom vanish" data-fragment-index="2">Full</span>
+									<span class="fragment fade-in" data-fragment-index="2">
+									  <span class="fragment custom vanish" data-fragment-index="4">Full</span>
 									</span>
-									<span class="fragment fade-down" data-fragment-index="2">TALL</span>
+									<span class="fragment fade-down" data-fragment-index="4">TALL</span>
 								</span>
-									<span class="fragment" data-fragment-index="1">-Stack</span>
+									<span class="fragment" data-fragment-index="2">-Stack</span>
 								</div>
-								<span class="fragment" data-fragment-index="1">Developer</span>
+								<span class="fragment" data-fragment-index="2">Developer</span>
 							</h3>
+							<span class="fragment" data-fragment-index="3">from 🇦🇹 Vienna</span>
 						</div>
+					</section>
+					<section data-auto-animate data-background-gradient="linear-gradient(to bottom, rgb(15 23 42), #152c3a)">
+						<h1>About me</h1>
+						<ul style="list-style: none;">
+							<li class="fragment">❤️ diving and snorkeling</li>
+							<li class="fragment">🤿 vacation most time in water</li>
+							<li class="fragment">📷 taking a lot of underwater pictures/videos</li>
+						</ul>
 					</section>
 					<section data-background-image="assets/jelly-01.jpg"></section>
 					<section data-background-image="assets/jelly-02.jpg"></section>
 					<section data-background-image="assets/jelly-03.jpg"></section>
-					<section data-auto-animate data-background-color="#152c3a">
-						<img src="assets/livewire.svg" class="r-stretch" />
-					</section>
-					<section data-auto-animate data-background-color="#152c3a">
-						<img src="assets/livewire.svg" class="r-stretch" />
-					</section>
+					<section data-background-image="assets/jelly-04.png"></section>
+					<section data-background-image="assets/jelly-05.png"></section>
 					<section data-auto-animate data-background-gradient="linear-gradient(to bottom, #1f8281, rgb(15 23 42))">
 						<img src="assets/livewire.svg" class="r-stretch" />
 					</section>
-					<section data-auto-animate data-background-color="rgb(15 23 42)">
+					<section data-auto-animate data-background-gradient="linear-gradient(to bottom, #1f8281, rgb(15 23 42))" data-transition="slide-out">
 						<img src="assets/livewire.svg" class="r-stretch" />
 						<h1 style="text-align: right"><span class="fragment">v3</span><span class="fragment">&nbsp;BETA</span></h1>
 					</section>
@@ -81,7 +86,7 @@
 				<section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
 {
   public function save()
   {
@@ -91,7 +96,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
 {
   public function save()
   {
@@ -101,7 +106,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
 {
   public function save()
   {
@@ -111,7 +116,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
 {
   public function save()
   {
@@ -121,7 +126,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
 {
   public function save()
   {
@@ -131,7 +136,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+						<pre data-id="code-event"><code class="language-php">class CreatePost extends Component
 {
   public function save()
   {
@@ -141,7 +146,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class PostList extends Component
+						<pre data-id="code-event"><code class="language-php">class PostList extends Component
 {
   protected $listeners = ['post-created' => 'increase'];
 
@@ -153,7 +158,7 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="language-php">class PostList extends Component
+						<pre data-id="code-event"><code class="language-php">class PostList extends Component
 {
   #[On('post-created')]
   public function increase()
@@ -164,28 +169,102 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="blade">
+						<pre data-id="code-event"><code class="language-blade">
 <!-- from Livewire component -->
 <div x-on:post-created="..."></div>
 						</code></pre>
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-animation"><code class="blade">
+						<pre data-id="code-event"><code class="language-blade">
 <!-- from any Livewire component on the page -->
 <div x-on:post-created.window="..."></div>
 						</code></pre>
 					</section>
 				</section>
 				<!-- END EVENTS -->
+				<!-- START ATTRIBUTES -->
+				<section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>#[Attribute]</h3>
+						<ul style="list-style: none">
+							<li class="fragment" style="display: inline-flex; align-items: center; gap:1rem;">😊 since<img src="assets/php.svg" height="26px" />8.0</li>
+							<li class="fragment">😢 parameters behave like CONST</li>
+							<li class="fragment">😢 no dynamic data, no closures</li>
+							<li class="fragment">🤙 we use them anyways</li>
+						</ul>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>#[Attribute]</h3>
+						<pre data-id="code-attributes" style="flex:1;"><code class="language-php">
+protected $listeners = ['post-created' => 'increase'];
+
+#[On('post-created')]
+</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>#[Attribute]</h3>
+						<pre data-id="code-attributes-2"><code class="language-php">
+public $name = '';
+public $email = '';
+
+protected $rules = [
+  'name' => 'required|min:6',
+  'email' => 'required|email',
+];
+</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>#[Attribute]</h3>
+						<pre data-id="code-attributes-2"><code class="language-php">
+#[Rule('required|min:6')]
+public $name = '';
+#[Rule('required|email')]
+public $email = '';
+</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>#[Attribute]</h3>
+						<div style="display: flex; gap: 2rem; align-items: center">
+<pre data-id="code-attributes" style="flex:1;"><code class="language-php">#[On]
+#[Rule]
+#[Url]
+#[Computed]
+#[Js]
+#[Layout]
+#[Title]
+#[Locked]
+#[Renderless]
+#[Modelable]
+#[Reactive]</code></pre>
+				<span data-qr="https://livewire.laravel.com/docs/quickstart"></span>
+			</div>
+					</section>
+				</section>
+				<!-- END ATTRIBUTES -->
+
 			</div>
 		</div>
 		<footer>
 			<img src="assets/livewire.svg" height="50px" />
-			<span style="font-size: 1.8rem;padding-top: 0.4rem;margin-left: -0.5rem">v3</span>
-			<span style="font-size: 1.8rem;padding-top: 0.4rem;">Adrian Nürnberger</span>
+			<div style="font-size: 1.8rem;padding-top: 0.4rem;margin-left: -0.5rem; display: inline-flex; align-items: center; gap: 1rem;">
+				<span>v3</span>
+				<span>💬 Adrian Nürnberger</span>
+				<span>|</span>
+				<img src="assets/x-logo.svg" height="25px" />
+				<span>@nuernberger_me</span>
+			</div>
 		</footer>
 
+		<script src="dist/qrcode.min.js"></script>
+		<script>
+			document.querySelectorAll('[data-qr]').forEach((el) => {
+				el.replaceWith(new QRCode({
+					msg: el.dataset.qr,
+					pal : ["#000000", "#f2f4f8"]
+				}))
+			});
+		</script>
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/highlight/blade.min.js"></script>
@@ -205,12 +284,12 @@
 
 			Reveal.on( 'slidechanged', event => {
 				const root = document.querySelector(':root');
-				if (event.indexh >= 4) {
+				if (event.indexh >= 1) {
 					root.style.setProperty('--display-footer', 'flex')
 				} else {
 					root.style.setProperty('--display-footer', 'none')
 				}
-			} );
+			});
 		</script>
 	</body>
 </html>
