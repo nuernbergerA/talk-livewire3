@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/material-palenight.css">
+	</head>
+	<body>
+		<style>
+			:root {
+				--r-code-font: 'Operator Mono Lig Medium' !important;
+				--display-footer: none;
+			}
+			footer {
+				width: 100dvw;
+				height: 50px;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: var(--display-footer);
+				padding: 1rem;
+				align-items: center;
+				gap: 1rem;
+				color:#fff;
+				font-family: var(--r-main-font);
+			}
+		</style>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-gradient="linear-gradient(to bottom, rgb(15 23 42), #17b2c3)">
+					<h1 class="fragment r-fit-text">Adrian Nürnberger</h1>
+					<p class="fragment">🇦🇹 Vienna</p>
+					<p class="fragment">❤️</p>
+					<p class="fragment">Wife + Son</p>
+					<p class="fragment">Laravel</p>
+					<p class="fragment">Pest (and Testing in general)</p>
+					<p class="fragment">Tailwind</p>
+					<p class="fragment">Sea</p>
+				</section>
+				<section data-auto-animate data-background-gradient="linear-gradient(to bottom, rgb(15 23 42), #17b2c3)"
+						 data-background-image="assets/bg-jelly.jpg"
+						 data-background-position="bottom right"
+						 data-background-opacity="0.6">
+				</section>
+				<section data-auto-animate data-background-gradient="linear-gradient(to bottom, rgb(15 23 42), #17b2c3)">
+					<img src="assets/livewire.svg" class="r-stretch" />
+				</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+					<img src="assets/livewire.svg" class="r-stretch" />
+					<h1 style="text-align: right"><span class="fragment">v3</span><span class="fragment">&nbsp;BETA</span></h1>
+				</section>
+				<!-- END INTRO -->
+				<section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+{
+  public function save()
+  {
+    $this->emit('post-created');
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+{
+  public function save()
+  {
+    $this->emitTo('post-created', PostList::Class);
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+{
+  public function save()
+  {
+    $this->emitBrowserEvent('post-created');
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+{
+  public function save()
+  {
+    $this->dispatchBrowserEvent('post-created');
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+{
+  public function save()
+  {
+    $this->dispatch('post-created');
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class CreatePost extends Component
+{
+  public function save()
+  {
+    $this->dispatch('post-created')->to(PostList::class);
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class PostList extends Component
+{
+  protected $listeners = ['post-created' => 'increase'];
+
+  public function increase()
+  {
+    $this->postCount = Post::count();
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="language-php">class PostList extends Component
+{
+  #[On('post-created')]
+  public function increase()
+  {
+    $this->postCount = Post::count();
+  }
+}</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="blade">
+<!-- from Livewire component -->
+<div x-on:post-created="..."></div>
+						</code></pre>
+					</section>
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-animation"><code class="blade">
+<!-- from any Livewire component on the page -->
+<div x-on:post-created.window="..."></div>
+						</code></pre>
+					</section>
+				</section>
+			</div>
+		</div>
+		<footer>
+			<img src="assets/livewire.svg" height="50px" />
+			<span style="font-size: 1.8rem;padding-top: 0.4rem;margin-left: -0.5rem">v3</span>
+			<span style="font-size: 1.8rem;padding-top: 0.4rem;">Adrian Nürnberger</span>
+		</footer>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/highlight/blade.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				progress: false,
+				highlight: {
+					beforeHighlight: hljs => hljs.registerLanguage('blade', bladeLanguage)
+				},
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [RevealHighlight]
+			});
+
+			Reveal.on( 'slidechanged', event => {
+				const root = document.querySelector(':root');
+				if (event.indexh >= 4) {
+					root.style.setProperty('--display-footer', 'flex')
+				} else {
+					root.style.setProperty('--display-footer', 'none')
+				}
+			} );
+		</script>
+	</body>
+</html>
