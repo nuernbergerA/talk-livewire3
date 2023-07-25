@@ -194,16 +194,28 @@
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
-						<pre data-id="code-event"><code class="language-blade">
-<!-- from Livewire component -->
-<div x-on:post-created="..."></div>
-						</code></pre>
+						<pre data-id="code-event"><code class="language-php">class PostList extends Component
+{
+  #[On('post-created')]
+  #[On('post-imported')]
+  public function increase()
+  {
+    $this->postCount++;
+  }
+}</code></pre>
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Events</h3>
 						<pre data-id="code-event"><code class="language-blade">
+<!-- from Livewire component -->
+&lt;div x-on:post-created="..."&gt;&lt;/div&gt;
+						</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>Events</h3>
+						<pre data-id="code-event"><code class="language-blade" >
 <!-- from any Livewire component on the page -->
-<div x-on:post-created.window="..."></div>
+&lt;div x-on:post-created.window="..."&gt;&lt;/div&gt;
 						</code></pre>
 					</section>
 				</section>
@@ -451,6 +463,14 @@ public function save()
 					</section>
 				</section>
 				<!-- END FORM -->
+				<section data-auto-animate data-background-color="rgb(15 23 42)">
+					<h3>Whats next</h3>
+					<ul style="list-style: none">
+						<li class="fragment">💻 Test Livewire 3 in your app</li>
+						<li class="fragment">📝 Check discussions before reporting a bug 🐛</li>
+						<li class="fragment">💪 Report bugs (with failing test ✨)</li>
+					</ul>
+				</section>
 				<!-- PPL -->
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
 					<h3>Meet Josh</h3>
@@ -460,9 +480,9 @@ public function save()
 							<li class="fragment">⛵ lives on a boat</li>
 							<li class="fragment">🤗 super handsome guy</li>
 							<li class="fragment">❓ takes care about issues</li>
-							<li class="fragment">🐛 helps you writing failing tests</li>
+							<li class="fragment">📝 helps you writing failing tests</li>
 							<li class="fragment">⌛ busy since v3 public beta</li>
-							<li class="fragment">⚠️ be nice an only submit bugs</li>
+							<li class="fragment">⚠️ be patient</li>
 						</ul>
 					</div>
 				</section>
