@@ -19,7 +19,10 @@
 				--r-code-font: 'Operator Mono Lig Medium','Operator Mono SSm Lig Medium' !important;
 				--display-footer: none;
 			}
-			tr:not(.highlight-line) .hljs-ln-code {
+			code {
+				overflow: hidden !important;
+			}
+			code tr:not(.highlight-line) .hljs-ln-code {
 				filter:blur(1.5px);
 			}
 			footer {
@@ -36,6 +39,9 @@
 				color:#fff;
 				font-family: var(--r-main-font);
 				z-index: 999999;
+			}
+			pre.inline, pre.inline code  {
+				display: inline !important;
 			}
 			.fragment.vanish.current-fragment, .fragment.vanish.visible:not(.current-fragment) {
 				visibility: hidden;
@@ -64,27 +70,29 @@
 					<section data-auto-animate data-background-gradient="linear-gradient(to bottom, #152c3a, rgb(15 23 42))">
 						<h1 class="r-fit-text fragment" data-fragment-index="1">Hello, I am Adrian!</h1>
 						<div style="max-width: 60%; margin: 0 auto;">
-							<h3 class="r-fit-text">
+							<h1 class="r-fit-text">
 								<div style="display: inline-flex;">
 									<span class="r-stack">
-									<span class="fragment fade-in" data-fragment-index="2">
-									  <span class="fragment custom vanish" data-fragment-index="4">Full</span>
+										<span class="fragment fade-in" data-fragment-index="2">
+											<span class="fragment highlight-red" data-fragment-index="4">
+											  <span class="fragment custom vanish" data-fragment-index="5">FULL</span>
+											</span>
+										</span>
+										<span class="fragment fade-down" data-fragment-index="5">TALL</span>
 									</span>
-									<span class="fragment fade-down" data-fragment-index="4">TALL</span>
-								</span>
 									<span class="fragment" data-fragment-index="2">-Stack</span>
 								</div>
 								<span class="fragment" data-fragment-index="2">Developer</span>
-							</h3>
-							<span class="fragment" data-fragment-index="3">from 🇦🇹 Vienna</span>
+							</h1>
+							<p class="fragment" data-fragment-index="3">from 🇦🇹 Vienna</p>
 						</div>
 					</section>
 					<section data-auto-animate data-background-gradient="linear-gradient(to bottom, rgb(15 23 42), #152c3a)">
-						<h1>About me</h1>
-						<ul style="list-style: none;">
-							<li class="fragment">❤️ diving and snorkeling</li>
-							<li class="fragment">🤿 vacation most time in water</li>
-							<li class="fragment">📷 taking a lot of underwater pictures/videos</li>
+						<h1 class="r-fit-text">My vacation routine</h1>
+						<ul style="list-style: none; display: inline-grid; gap:2rem;">
+							<li class="fragment">🏝️ <pre class="inline"><code class="language-php">collect($vacation)->contains('me', '🌊')</code></pre></li>
+							<li class="fragment">🤿 <pre class="inline"><code class="language-php">throw_unless($diving || $snorkeling, BadVibes::class)</code></pre></li>
+							<li class="fragment">📷 <pre class="inline"><code class="language-php">while($underwater) $take('pictures' || 'videos')</code></pre></li>
 						</ul>
 					</section>
 					<section data-background-image="assets/jelly-01.jpg"></section>
@@ -102,12 +110,111 @@
 				</section>
 				<!-- END INTRO -->
 				<!-- START ALPINE -->
-				<section data-auto-animate data-background-color="rgb(15 23 42)">
-					<img src="assets/livewire.svg" class="r-stretch" />
-					<span style="font-size: 8rem" class="fragment" data-fragment-index="2">🤝</span>
-					<div class="fragment" data-fragment-index="1">
-						<img src="assets/alpine.svg" class="r-stretch" />
-					</div>
+				<section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<img src="assets/livewire.svg" class="r-stretch" />
+						<span style="font-size: 8rem" class="fragment" data-fragment-index="2">🤝</span>
+						<div class="fragment" data-fragment-index="1">
+							<img src="assets/alpine.svg" class="r-stretch" />
+						</div>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>AlpineJs</h3>
+						<pre data-id="code-alpine"><code class="language-php" data-line-numbers="1-13|3-5" data-noescape>class Counter extends Component
+{
+  public $count = 1;
+
+  public function increment()
+  {
+    $this->count++;
+  }
+
+  public function render()
+  {
+    return view('livewire.counter');
+  }
+}</code></pre>
+					</section>
+					<section data-background-color="rgb(15 23 42)">
+						<h3>AlpineJs</h3>
+						<pre data-id="code-alpine"><code class="language-js" data-line-numbers="1|2-6|8-9|11-13|15-17|19-20|22-24|26-29|31-33|35-37|35-40|42-44|46-48|50-52|54-55|57-67|69-70|72-73|75-76" data-noescape>let $wire = {
+  // All component public properties are accessible
+  count: 0,
+
+  // All public methods are exposed and callable
+  increment() { ... },
+
+  // Access the `$wire` object of the parent component if one exists...
+  $parent,
+
+  // Get the value of a property by name...
+  // Usage: $wire.$get('count')
+  $get(name) { ... },
+
+  // Set a property on the component by name...
+  // Usage: $wire.$set('count', 5)
+  $set(name, value) { ... },
+
+  // Toggle the value of a boolean property...
+  $toggle(name) { ... },
+
+  // Call the method
+  // Usage: $wire.$call('increment')
+  $call(method, ...params) { ... },
+
+  // Entangle the value of a Livewire property with a different,
+  // arbitrary, Alpine property...
+  // Usage: &lt;div x-data="{ count: $wire.$entangle('count') }"&gt;
+  $entangle(name, live = false) { ... },
+
+  // Watch the value of a property for changes...
+  // Usage: Alpine.$watch('count', (value, old) => { ... })
+  $watch(name, callback) { ... },
+
+  // Refresh a component by sending a commit to the server
+  // to re-render the HTML and swap it into the page...
+  $refresh() { ... },
+
+  // Alias for `$refresh`.
+  $commit() { ... },
+
+  // Listen for a an event dispatched from this component or its children...
+  // Usage: $wire.$on('post-created', () => { ... })
+  $on(event, callback) { ... },
+
+  // Dispatch an event from this component...
+  // Usage: $wire.$dispatchTo('post-created', { postId: 2 })
+  $dispatch(event, params = {}) { ... },
+
+  // Dispatch an event onto another component...
+  // Usage: $wire.$dispatchTo('dashboard', 'post-created', { postId: 2 })
+  $dispatchTo(otherComponentName, event, params = {}) { ... },
+
+  // Dispatch an event onto this component and no others...
+  $dispatchSelf(event, params = {}) { ... },
+
+  // A JS API to upload a file directly to component
+  // rather than through `wire:model`...
+  $upload(
+    name, // The property name
+    file, // The File JavaScript object
+    finish = () => { ... }, // Runs when the upload is finished...
+    error = () => { ... }, // Runs if an error is triggered mid-upload...
+    progress = (event) => { // Runs as the upload progresses...
+      event.detail.progress // An integer from 1-100...
+    },
+  ) { ... },
+
+  // API to upload multiple files at the same time...
+  $uploadMultiple(name, files, finish, error, progress) { },
+
+  // Remove an upload after it's been temporarily uploaded but not saved...
+  $removeUpload(name, tmpFilename, finish, error) { ... },
+
+  // Retrieve the underlying "component" object...
+  __instance() { ... },
+}</code></pre>
+					</section>
 				</section>
 				<!-- END ALPINE -->
 				<!-- START EVENTS -->
@@ -347,7 +454,7 @@ public function reset()
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-<pre data-id="code-attributes""><code class="language-php">#[On]
+<pre data-id="code-attributes"><code class="language-php">#[On]
 #[Rule]
 #[Url]
 #[Computed]
@@ -420,7 +527,8 @@ public function save()
 				<section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>Form object</h3>
-						<pre><code class="language-php" data-line-numbers="1-15|3|5-8" data-noescape data-id="code-form-object">class EditPost extends Component
+						<pre><code class="language-php" data-line-numbers="1-16|4|6-9" data-noescape data-id="code-form-object">// v2
+class EditPost extends Component
 {
   public Post $post;
 
@@ -530,7 +638,7 @@ public function save()
 				</section>
 				<!-- PPL -->
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
-					<h3>📢 Shoutout</h3>
+					<h3>📢 Shout out</h3>
 					<div style="display:flex; gap:2rem; align-items:center;">
 						<div>
 							<p class="fragment" data-fragment-index="1">🇦🇺 Josh Hanley</p>
@@ -549,7 +657,7 @@ public function save()
 					</div>
 				</section>
 				<section data-auto-animate data-background-color="rgb(15 23 42)">
-					<h3>📢 Shoutout</h3>
+					<h3>📢 Shout out</h3>
 					<div style="display:flex; gap:2rem; align-items:end;">
 						<div>
 							<p class="fragment" data-fragment-index="1">🇺🇸 Caleb Porzio</p>
@@ -612,6 +720,8 @@ public function save()
 			Reveal.initialize({
 				hash: true,
 				progress: false,
+				// width: 1920,
+				// height: 1080,
 				highlight: {
 					beforeHighlight: hljs => hljs.registerLanguage('blade', bladeLanguage)
 				},
