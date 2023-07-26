@@ -291,9 +291,9 @@ public $value = '';
 						<h3>#[Attribute]</h3>
 						<pre><code class="language-php" data-line-numbers="2-6|8|8-9|11-12|14-15" data-noescape>
 #[Computed]
-public function user()
+public function users()
 {
-  return User::find($this->userId);
+  return User::all();
 }
 
 #[Computed(persist: true)] // default 1 hour
@@ -303,7 +303,7 @@ public function user()
 #[Computed(cache: true)]
 
 // Busting the cache
-unset($this->posts);</code></pre>
+unset($this->users);</code></pre>
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
