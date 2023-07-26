@@ -144,7 +144,7 @@
   // All public methods are exposed and callable
   increment() { ... },
 
-  // Access the `$wire` object of the parent component if one exists...
+  // Access the `$wire` object of the parent component
   $parent,
 
   // Get the value of a property by name...
@@ -433,10 +433,20 @@ https://example.com/users?search=
 					</section>
 					<section data-auto-animate data-background-color="rgb(15 23 42)">
 						<h3>#[Attribute]</h3>
-						<pre><code class="language-php" data-line-numbers="3|2-3|5" data-noescape>
+						<pre data-id="code-attributes-locked"><code class="language-php" data-line-numbers="2-3|5-8" data-noescape>
 #[Locked]
-public $id;
+public $postId;
 
+#[Computed]
+public function user() {
+  return Post::find($this->postId);
+}
+</code></pre>
+					</section>
+					<section data-auto-animate data-background-color="rgb(15 23 42)">
+						<h3>#[Attribute]</h3>
+						<pre data-id="code-attributes-locked"><code class="language-php" data-line-numbers="1-3" data-noescape>
+// Livewire locks `$post->id` automatically
 public Post $post;
 </code></pre>
 					</section>
